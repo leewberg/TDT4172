@@ -44,10 +44,10 @@ class LinearRegression():
         #Gradient Descent
         for _ in range (self.epochs):
             lin_model = np.dot(X, self.weights)+self.bias
-            diff_w = (1/rows) *np.dot(X.T, (lin_model-y))
-            diff_b = (1/rows) * np.sum(lin_model - y)
-            self.weights = self.weights - self.learning_rate*diff_w
-            self.bias = self.bias - self.learning_rate*diff_b            
+            grad_w = (1/rows) *np.dot(X.T, (lin_model-y))
+            grad_b = (1/rows) * np.sum(lin_model - y)
+            self.weights = self.weights - self.learning_rate*grad_w
+            self.bias = self.bias - self.learning_rate*grad_b            
         
 
     
